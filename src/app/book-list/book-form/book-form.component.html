@@ -1,0 +1,18 @@
+<h2>Créer un livre</h2>
+<form [formGroup]="bookForm" (ngSubmit)="onSaveBook()">
+    <div class="form-group">
+        <label for="titre">Titre</label>
+        <input type="text" class="form-control" id="titre" placeholder="Titre du livre" formControlName="titre">
+    </div>
+    <div class="form-group">
+        <label for="author">Auteur</label>
+        <input type="text" class="form-control" id="author" placeholder="Auteur du livre" formControlName="author">
+    </div>
+    <div class="form-group">
+        <label for="author">Image</label>
+        <input type="file" class="form-control" (change)="detectFiles($event)" accept="image/*">
+        <p class="text-success" *ngIf="fileUpload">Fichier chargé !</p>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid || fileIsUploading">Ajouter le livre</button>
+</form>
+<p class="text-danger">{{ errorMessage }}</p>

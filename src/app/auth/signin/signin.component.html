@@ -1,0 +1,13 @@
+<h2>Se connecter</h2>
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" placeholder="Entrer votre email" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" class="form-control" id="password" placeholder="Entrer votre mot de passe" formControlName="password">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="signInForm.invalid">Connexion</button>
+</form>
+<p class="text-danger">{{ errorMessage }}</p>

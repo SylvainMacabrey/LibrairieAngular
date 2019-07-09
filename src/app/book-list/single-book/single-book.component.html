@@ -1,0 +1,4 @@
+<h2>{{ book.titre }}</h2>
+<p>{{ book.author }}</p>
+<img style="max-width: 400px; max-height: 400px" [src]="book.photo" *ngIf="book.photo">
+<button class="btn btn-secondary" (click)="onBack()">Retour à la liste</button>

@@ -1,0 +1,21 @@
+<h2>Vos livres</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books; let i = index">
+            <th scope="row">{{ i }}</th>
+            <td><h2 (click)="onViewBook(i)" style="cursor:pointer">{{ book.titre }}</h2></td>
+            <td>
+                <button class="btn btn-danger" (click)="onDeleteBook(book)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" (click)="onNewBook()">Créer un livre</button>
